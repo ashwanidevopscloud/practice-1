@@ -1,10 +1,33 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-annotation
+ name: all-pod
+ labels:
+   name: shiva
+   author: shivareddy
+   course: 2hurs##########
   annotations:
-    buildURL: "https://stackoverflow.com/questions/65756827/eksctl-create-cluster-stuck-waiting-for-cloudformation-stack"
+    imageURL: "https://github.com/eksctl-io/eksctl/blob/main/examples/01-simple-cluster.yaml"
 spec:
   containers:
-  - name: nginx
-    image: nginx
+    - name: nginx
+      image: nginx
+      env:
+        - name: project
+          value: 3-tier
+        - name: module
+          value: frontend
+        - name: environment
+          value: dev
+      resources:
+        requests:
+          cpu: 60
+          memory: 100Mi
+        limits:
+          cpu: 80
+          memory: 120Mi
+          
+    - name: almalinux
+      image: almalinux:9
+      command: ["sleep", "1000"]
+
