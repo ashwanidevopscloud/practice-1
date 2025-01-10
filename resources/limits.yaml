@@ -15,9 +15,9 @@ spec:
     env:
      - name: author
        value: shiva
-       name: project
+     -  name: project
        value: frontend
-       name: course
+     -  name: course
        value: 120hurs
     resources:
       requests:
