@@ -12,17 +12,9 @@ spec:
   containers:
     - name: nginx
       image: nginx
-      env:
-        - name: course
-          valueFrom:
-            configMapKeyRef:
-               name: nginx-configure
-               key: course
-        - name: project
-          valueFrom:
-            configMapKeyRef:
-              name: nginx-configure
-              key: project
+      envFrom:
+        - configMapRef
+            name: nginx-configure
       resources:
         requests:
           cpu: 40m
