@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: nginx-configure
 data:
-  course: devops
-  duration: "120hurs"
+  course: devopsssssssssssssssssssssssssssssss
+  duration: "12011111111111111111111111hurs"
   project: app
