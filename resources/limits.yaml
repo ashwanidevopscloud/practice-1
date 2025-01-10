@@ -7,7 +7,7 @@ metadata:
     environment: dev
     module: backend
   annotation:
-    imageURL: "https://github.com/eksctl-io/eksctl/blob/main/examples/01-simple-cluster.yaml"
+    buildURL: "https://github.com/eksctl-io/eksctl/blob/main/examples/01-simple-cluster.yaml"
 spec:
   containers:
   - name: nginx
