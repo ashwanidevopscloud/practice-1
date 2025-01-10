@@ -21,7 +21,7 @@ spec:
         - name: suthor
           valueFROM:
             ConfigMapKeyRef:
-              name: author
+              name: nginx-configure
               key: duration
           resources:
             requests:
