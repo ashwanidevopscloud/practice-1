@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configure
+  labels:
+    name: podproject
+    course: podcourse
+    duration: podduration2hurs
+  annotations:
+    imageURL: "https://github.com/ashwanidevopscloud/practice-1"
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      env:
+        - name: course
+          valueFROM:
+            ConfigMapKeyRef:
+               name: nginx-configure
+               key: course
+        - name: suthor
+          valueFROM:
+            ConfigMapKeyRef:
+              name: author
+              key: duration
+          resources:
+            requests:
+              cpu: 40m
+              memory: 60Mi
+            limits:
+              cpu: 80m
+              memory: 100Mi
