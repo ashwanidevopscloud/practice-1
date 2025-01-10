@@ -5,8 +5,8 @@ metadata:
  labels:
    name: shiva
    author: shivareddy
-   course: 2hurs##########
-  annotations:
+   course: 2677777777777777777777hurs
+ annotations:
     imageURL: "https://github.com/eksctl-io/eksctl/blob/main/examples/01-simple-cluster.yaml"
 spec:
   containers:
