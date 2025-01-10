@@ -16,9 +16,9 @@ spec:
      - name: author
        value: shiva
      -  name: project
-       value: frontend
+        value: frontend
      -  name: course
-       value: 120hurs
+        value: 0000000000000000000000000hurs
     resources:
       requests:
         cpu: 100m
