@@ -15,10 +15,10 @@ spec:
     env:
      - name: author
        value: shiva
-     - name: project
+       name: project
        value: frontend
-      - name: course
-        value: 120hurs
+       name: course
+       value: 120hurs
     resources:
       requests:
         cpu: 100m
