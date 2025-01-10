@@ -14,12 +14,12 @@ spec:
       image: nginx
       env:
         - name: course
-          valueFROM:
+          valueFrom:
             ConfigMapKeyRef:
                name: nginx-configure
                key: course
         - name: suthor
-          valueFROM:
+          valueFrom:
             ConfigMapKeyRef:
               name: nginx-configure
               key: duration
