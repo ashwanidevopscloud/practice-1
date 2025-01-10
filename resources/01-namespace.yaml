@@ -1,8 +1,7 @@
 apiVersion: v1
-kind: Namespace
+kind: Namespaces
 metadata:
-  name: nginx
+  name: expense1
   labels:
-    project: expense1
+    project: expense-project
     environment: dev
-  
