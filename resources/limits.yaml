@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: limits-pod
+  name: pod-li
   labels:
     project: 3-tier
     environment: dev
     module: backend
-  annotation:
+  annotations:
     buildURL: "https://github.com/eksctl-io/eksctl/blob/main/examples/01-simple-cluster.yaml"
 spec:
   containers:
