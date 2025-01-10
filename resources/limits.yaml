@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: limits
+  name: limits-pod
   labels:
     project: 3-tier
     environment: dev
