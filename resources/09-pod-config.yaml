@@ -18,15 +18,15 @@ spec:
             ConfigMapKeyRef:
                name: nginx-configure
                key: course
-        - name: suthor
+        - name: duration
           valueFrom:
             ConfigMapKeyRef:
               name: nginx-configure
               key: duration
-          resources:
-            requests:
-              cpu: 40m
-              memory: 60Mi
-            limits:
-              cpu: 80m
-              memory: 100Mi
+      resources:
+        requests:
+          cpu: 40m
+          memory: 60Mi
+        limits:
+          cpu: 80m
+          memory: 100Mi
