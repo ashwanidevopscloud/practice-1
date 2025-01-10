@@ -4,5 +4,5 @@ metadata:
   name: creatingpod
 spec:
  containers:
- - name: nginx
-   value: nginx
+   - name: nginx
+     value: nginx
