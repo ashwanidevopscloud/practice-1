@@ -22,7 +22,7 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: nginx-configure
-              key: duration
+              key: project
       resources:
         requests:
           cpu: 40m
