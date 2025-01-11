@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DeployementSet
+metadata:
+   name: deploy-file-set
+   labels:
+     name: mysql
+     tier: db
+     project: expense
+spec:
+  replicas: 1
+  selector:
+     name: selecting-labels
+      matchLabels:
+        name: mysql
+        tier: db
+        project: expense
+  template:
+     metadata:
+       name: expense-pod
+       labels:
+          name: mysql
+          tier: db
+          project: expense
+      spec:
+        containers:
+          - name: nginx
+            image: nginx
+      
+
