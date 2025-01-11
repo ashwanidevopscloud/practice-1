@@ -21,5 +21,21 @@ spec:
       containers:
         - name: nginx
           image: nginx
-     
-      
+
+---
+apiVersion: v1
+kind: Service
+metadata: 
+   name: nginx-service-replicas
+   labels:
+     name: nginx
+     course: devops
+spec:
+  selector:
+     name: nginx
+     course: devops
+  ports:
+   - name: nginx-port-replicas
+     protocol: TCP
+     port: 80
+     targetPort: 80
