@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: DeployementSet
+kind: Deployement
 metadata:
-   name: deploy-file-set
+   name: mysql
    labels:
      name: mysql
      tier: db
@@ -9,21 +9,44 @@ metadata:
 spec:
   replicas: 1
   selector:
-     name: selecting-labels
-      matchLabels:
+     name: selecting-labels-mysql
+     matchLabels:
         name: mysql
         tier: db
         project: expense
   template:
      metadata:
-       name: expense-pod
+       name: expense-pod-mysql
        labels:
           name: mysql
           tier: db
           project: expense
       spec:
         containers:
-          - name: nginx
-            image: nginx
+          - name: mysql
+            image: joindevops/mysql:v1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  labels: 
+    name: mysql
+    tier: db
+    project: expense
+spec:
+  selector:
+    name: mysql
+    tier: db
+    project: expense
+  ports:
+   - name: mysql-port
+     protocol: TCP
+     port: 3306
+     targetPort: 3306
+
+
+  
       
 
