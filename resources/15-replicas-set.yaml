@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicasSet
+metadata:
+  name: replicasSet
+  labels:
+    name: nginx
+    course: devops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: nginx
+      course: devops
+  templates:
+    metadata:
+       name: replicaPod
+       labels: 
+         name: nginx
+         course: devops
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+     
+      
