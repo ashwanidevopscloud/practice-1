@@ -9,7 +9,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-     name: selecting-labels-mysql
+     name: mysql
      matchLabels:
         name: mysql
         tier: db
