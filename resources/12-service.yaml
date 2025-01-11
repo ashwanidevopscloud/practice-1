@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: service
+metadata:
+   name: service-project
+spec:
+  selector:
+    name: ashwanidevopscloud
+    age: "25"
+    course: softwareeeee
+  ports:
+    - name: nginx-svc-port
+      protocal: TCP
+      port: 80
+      targetPort: 80
