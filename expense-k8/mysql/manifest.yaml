@@ -21,8 +21,8 @@ spec:
           name: mysql
           tier: db
           project: expense
-      spec:
-        containers:
+     spec:
+       containers:
           - name: mysql
             image: joindevops/mysql:v1
 
