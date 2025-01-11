@@ -13,7 +13,7 @@ spec:
       course: devops
   template:
     metadata:
-       name: replicaPod
+       name: replicapod
        labels: 
          name: nginx
          course: devops
