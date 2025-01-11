@@ -11,7 +11,7 @@ spec:
     matchLabels:
       name: nginx
       course: devops
-  templates:
+  template:
     metadata:
        name: replicaPod
        labels: 
