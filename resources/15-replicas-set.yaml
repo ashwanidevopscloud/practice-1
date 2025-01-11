@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicasSet
 metadata:
-  name: nginx-configure
+  name: nginx
   labels:
     name: nginx
     course: devops
