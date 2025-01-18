@@ -1,3 +1,3 @@
 FROM almalinux
-Run dnf install nginx -y
+RUN dnf install nginx -y
 CMD ["echo", "hello-world"]
