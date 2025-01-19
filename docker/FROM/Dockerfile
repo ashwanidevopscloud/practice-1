@@ -23,3 +23,8 @@ ARG course="Frontend" \
 ENV duration=$duration \
     trainer=$trainer
 RUN echo "course:$course, duration:$duration, trainer:$trainer"
+
+RUN mkdir /tmp/docker
+WORKDIR /tmp/docker
+RUN pwd
+COPY index.html /tmp/docker/index.html
