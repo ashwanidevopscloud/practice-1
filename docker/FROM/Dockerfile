@@ -10,4 +10,4 @@ COPY index.html /usr/share/nginx/html/about.html
 COPY home.html /usr/share/nginx/html/home.html
 CMD ["nginx", "-g", "daemon off;"]
 ADD  "https://www.resume.com/"  /usr/share/nginx/html/index.html
-RUN  chmod + X   /user/share/nginx/html/index.html
+RUN chmod + x   /user/share/nginx/html/index.html
