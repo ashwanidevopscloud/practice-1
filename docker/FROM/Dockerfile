@@ -8,5 +8,5 @@ LABEL author="ashwaani" \
 
 COPY index.html /usr/share/nginx/html/index.html
 CMD ["nginx", "-g", "daemon off;"]
-ADD https://www.resume.com/ /usr/share/nginx/html/index.html
+# ADD https://www.resume.com/ /usr/share/nginx/html/.html
 # RUN chmod+X /user/share/nginx/html/index.html
