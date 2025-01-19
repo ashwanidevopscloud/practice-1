@@ -3,7 +3,7 @@ RUN dnf install nginx -y
 # CMD ["echo", "hello-world"]
 LABEL author="ashwaani" \
       course="devops" \
-      topic="aws" \
+      topic="aws" 
 
 # COPY index.html /usr/share/nginx/html/index.html
 CMD ["nginx", "-g", "daemon off;"]
