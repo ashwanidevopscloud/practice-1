@@ -1,5 +1,6 @@
 FROM almalinux
 RUN dnf install nginx -y
+RUN rm -f /usr/share/nginx/html/index.html
 # CMD ["echo", "hello-world"]
 LABEL author="ashwaani" \
       course="devops" \
