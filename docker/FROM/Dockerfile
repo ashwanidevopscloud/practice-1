@@ -9,5 +9,5 @@ LABEL author="ashwaani" \
 COPY index.html /usr/share/nginx/html/about.html
 COPY home.html /usr/share/nginx/html/home.html
 ADD  https://raw.githubusercontent.com/daws-81s/concepts/refs/heads/main/self-intro.yaml /usr/share/nginx/html/index.html
-RUN chmod 644  /user/share/nginx/html/index.html
+RUN chmod 644  /usr/share/nginx/html/index.html
 CMD ["nginx", "-g", "daemon off;"]
