@@ -18,8 +18,8 @@ ENV course="devops" \
     trainer="shiva"
 RUN echo "course:$course, duration:$duration, trainer:$trainer, version: $version"
 ARG course="Frontend" \
-    duration1="5hours............................" \
-    trainer2="Skill up technologyies to #####################"
-ENV duration1=$duration1
-    trainer2=$trainer2
+    time="5hours............................" \
+    teacher="Skill up technologyies to #####################"
+ENV time = $time
+    teacher = $teacher
 RUN echo "course:$course, duration:$duration, trainer:$trainer"
