@@ -1,5 +1,4 @@
 ARG version=9.1
-RUN echo "my app version is $version"
 FROM almalinux:${version}
 RUN echo "my app version is $version"
 RUN dnf install nginx -y
