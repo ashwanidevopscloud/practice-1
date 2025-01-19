@@ -16,7 +16,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ENV course="devops" \
     duration="2hours" \
     trainer="shiva"
-RUN echo "course:$course, duration:$duration, trainer:$trainer"
+RUN echo "course:$course, duration:$duration, trainer:$trainer version:$version"
 ARG course="Frontend" \
     duration="5hours............................" \
     trainer="Skill up technologyies to #####################"
