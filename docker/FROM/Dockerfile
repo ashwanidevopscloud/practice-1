@@ -6,6 +6,6 @@ LABEL author="ashwaani" \
       topic="aws" \
 
 # COPY index.html /usr/share/nginx/html/index.html
-CMD ["nginx", "-g", "daemon off:"]
+CMD ["nginx", "-g", "daemon off;"]
 ADD https://www.resume.com/ /usr/share/nginx/html/index.html
 # RUN chmod+X /user/share/nginx/html/index.html
