@@ -28,3 +28,6 @@ RUN mkdir /tmp/docker
 WORKDIR /tmp/docker
 RUN pwd
 COPY index.html /tmp/docker/page.html
+
+RUN useradd siva
+USER siva
