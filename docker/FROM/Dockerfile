@@ -1,4 +1,6 @@
-FROM almalinux
+ARG version
+FROM almalinux:9
+RUN echo "my app version is ${version}"
 RUN dnf install nginx -y
 RUN rm -f /usr/share/nginx/html/index.html
 # CMD ["echo", "hello-world"]
