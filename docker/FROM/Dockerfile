@@ -1,5 +1,5 @@
-ARG ${version:-9}
-FROM almalinux:9
+ARG version
+FROM almalinux:${version:-9}
 RUN echo "my app version is $version"
 RUN dnf install nginx -y
 RUN rm -f /usr/share/nginx/html/index.html
