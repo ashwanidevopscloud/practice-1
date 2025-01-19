@@ -1,8 +1,5 @@
 ARG version=9.1
 FROM almalinux:${version}
-RUN useradd siva
-USER siva
-CMD ["sleep", "1000s"]
 RUN echo "my app version is $version"
 RUN dnf install nginx -y
 RUN rm -f /usr/share/nginx/html/index.html
@@ -30,5 +27,8 @@ RUN echo "course:$course, duration:$duration, trainer:$trainer"
 RUN mkdir /tmp/docker
 WORKDIR /tmp/docker
 RUN pwd
+RUN useradd siva
+USER siva
+CMD ["sleep", "1000s"]
 COPY index.html /tmp/docker/page.html
 
