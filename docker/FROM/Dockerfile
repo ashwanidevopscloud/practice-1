@@ -27,4 +27,4 @@ RUN echo "course:$course, duration:$duration, trainer:$trainer"
 RUN mkdir /tmp/docker
 WORKDIR /tmp/docker
 RUN pwd
-COPY index.html /tmp/docker/index.html
+COPY index.html /tmp/docker/page.html
