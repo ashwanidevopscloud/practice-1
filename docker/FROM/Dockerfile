@@ -20,6 +20,6 @@ RUN echo "course:$course, duration:$duration, trainer:$trainer, version: $versio
 ARG course="Frontend" \
     duration1="5hours............................" \
     trainer2="Skill up technologyies to #####################"
-ENV duration1 = $duration1 \
-    trainer2 = $trainer2
+ENV duration1=$duration1 \
+    trainer2=$trainer2
 RUN echo "course:$course, duration:$duration, trainer:$trainer"
