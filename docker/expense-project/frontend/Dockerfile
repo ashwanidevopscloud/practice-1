@@ -4,5 +4,5 @@ WORKDIR /usr/share/nginx/html
 RUN pwd
 COPY code .
 USER nginx
-COPY expense.conf .
+COPY expense.conf /etc/nginx/default.d/expense.conf
 
