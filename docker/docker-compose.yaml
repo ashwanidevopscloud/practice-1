@@ -1,8 +1,8 @@
 version:"3"
 networks:
-  expense:
+  expense
 volumes:
-  devops: # docker volume create devops
+  devops # docker volume create devops
 services:
   mysql:
     image: mysql:a1
