@@ -1,8 +1,8 @@
 version:"3"
 network:
-  expense
+  expense:
 volumes:
-  devops # docker volume create devops
+  devops: # docker volume create devops
 services:
   mysql:
     image: mysql:a1
@@ -18,7 +18,7 @@ services:
     image: frontend:a1
     container_name: frontend
     depends_on:
-      - backend
+      - backend:
     ports:
      - 80:80
 
