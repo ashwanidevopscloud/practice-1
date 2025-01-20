@@ -8,7 +8,7 @@ services:
     image: mysql:a1
     container_name: mysql # --name mysql
     volume:
-      - ex-data2: /var/lib/mysql # -v mysql:/var/lib/mysql
+      - ex-data2:/var/lib/mysql # -v mysql:/var/lib/mysql
   backend:
     image: backend:a1
     container_name: backend
