@@ -2,13 +2,13 @@ version: "3"
 networks:
   expense:
 volumes:
-  devops: # docker volume create devops
+  ex-data2: # docker volume create devops
 services:
   mysql:
     image: mysql:a1
     container_name: mysql # --name mysql
     volume:
-      - devops: /var/lib/mysql # -v mysql:/var/lib/mysql
+      - ex-data2: /var/lib/mysql # -v mysql:/var/lib/mysql
   backend:
     image: backend:a1
     container_name: backend
