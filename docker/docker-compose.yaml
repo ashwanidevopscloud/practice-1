@@ -1,5 +1,5 @@
 version:"3"
-networks:
+network:
   expense
 volumes:
   devops # docker volume create devops
