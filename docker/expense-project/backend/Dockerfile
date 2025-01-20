@@ -7,7 +7,6 @@ COPY *.js  /app
 COPY package.json  /app
 COPY schema/*.sql  /app
 RUN npm install
-CMD ["node", "index.js"]
 RUN useradd expense
 USER expense
 ENV DB_HOST="mysql"
