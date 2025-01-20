@@ -1,4 +1,4 @@
-version:"3"
+version: "3"
 networks:
   expense:
 volumes:
@@ -8,17 +8,17 @@ services:
     image: mysql:a1
     container_name: mysql # --name mysql
     volumes:
-    - devops: /var/lib/mysql # -v mysql:/var/lib/mysql
+      - devops: /var/lib/mysql # -v mysql:/var/lib/mysql
   backend:
     image: backend:a1
     container_name: backend
     depends_on:
-    - mysql
+      - mysql
   frontend:
     image: frontend:a1
     container_name: frontend
     depends_on:
-    - backend:
+      - backend
     ports:
      - 80:80
 
