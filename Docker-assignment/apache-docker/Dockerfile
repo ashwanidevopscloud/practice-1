@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM httpd:2.4
 RUN mkdir /apache_docker_project
 WORKDIR /apache_docker_project
 COPY index.html /apache_docker_project
