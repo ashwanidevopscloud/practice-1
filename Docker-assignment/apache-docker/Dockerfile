@@ -1,6 +1,6 @@
 FROM httpd:2.4
 RUN rm -rf /var/www/html/*
-WORKDIR /ver/www/html
+WORKDIR /var/www/html
 RUN pwd
 COPY . /var/www/html
 EXPOSE 80
