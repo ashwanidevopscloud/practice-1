@@ -1,4 +1,4 @@
-FROM ub
+FROM ubuntu:latest
 # RUN rm -rf /var/www/html
 WORKDIR /var/www/html
 RUN pwd
