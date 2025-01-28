@@ -18,7 +18,7 @@ services:
     volumes:
       - shared-data:/app/shared # Attach the shared volume
     working_dir: /app/shared
-    command: sh -c "while true; do echo 'Node.js file shared volume' > shared.txt; sleep 5; done"
+    command: sh -c "echo 'Hello All i am from Node.js' > /usr/src/app/index.html && sleep 5;"
 
 # volumes:
 #   shared-data:
