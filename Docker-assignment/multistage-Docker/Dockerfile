@@ -8,6 +8,7 @@ RUN mvn clean package
 
 FROM openjdk:17-jdk-slim AS deploy
 WORKDIR /app
+RUN pwd
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]

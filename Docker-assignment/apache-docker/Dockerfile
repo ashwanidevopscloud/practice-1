@@ -1,8 +1,8 @@
-FROM ubuntu:latest
+FROM htt
 # RUN rm -rf /var/www/html
-WORKDIR /var/www/html
+WORKDIR /var/www/html/
 RUN pwd
-COPY . /var/www/html
+COPY . /var/www/html/
 EXPOSE 80
 RUN apt-get update
 RUN apt install -y apache2 

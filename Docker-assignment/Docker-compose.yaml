@@ -1,0 +1,29 @@
+version: "3"
+networks:
+  expense:
+volumes:
+    shared-data: # docker volume create devops
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-container
+    ports:
+     - 8080:80
+    volumes:
+      - shared-data:/usr/share/nginx/html
+    working_dir: /usr/share/nginx/html
+  nodejs:
+    image: node:16
+    container_name: nodejs-container
+    volumes:
+      - shared-data:/app/shared # Attach the shared volume
+    working_dir: /app/shared
+    command: sh -c "while true; do echo 'Node.js file shared volume' > shared.txt; sleep 5; done"
+
+# volumes:
+#   shared-data:
+#     driver: local
+  
+
+
+
