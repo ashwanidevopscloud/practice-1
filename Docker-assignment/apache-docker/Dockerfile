@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM ub
 # RUN rm -rf /var/www/html
 WORKDIR /var/www/html
 RUN pwd
