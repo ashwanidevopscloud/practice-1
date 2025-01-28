@@ -1,7 +1,8 @@
-FROM almalinux
+FROM httpd:2.4
 RUN mkdir /apache_docker_project
 WORKDIR /apache_docker_project
 COPY index.html /apache_docker_project
+RUN pwd
 EXPOSE 80
 RUN apt install –y apache2 
 RUN apt install –y apache2-utils 
