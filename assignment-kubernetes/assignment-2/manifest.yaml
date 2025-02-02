@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configure
+  labels:
+    name: kubernetes
+    project: app
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      envFrom:
+        - configMapRef:
+            name: nginx-configure
+        - secretRef:
+            name: secret-configure
+      resources:
+        requests:
+          cpu: 40m
+          memory: 60Mi
+        limits:
+          cpu: 80m
+          memory: 100Mi
