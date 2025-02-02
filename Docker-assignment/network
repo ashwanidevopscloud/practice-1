@@ -7,6 +7,16 @@ docker pull busybox:latest
 docker run -d -p 81:80 --name busybox-container --network custom-network busybox:latest
 docker exec -it nginx-container sh
 ping busybox-container
+FROM nginx:latest
+WORKDIR /usr/share/nginx/html
+RUN echo "Hello  i am from Nginx" > index.html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 
+FROM busybox:latest
+WORKDIR /www
+RUN echo "Hello  i am from BusyBox" > index.html
+EXPOSE 80
+CMD ["busybox", "httpd", "-f", "-p", "80"]
 
 
