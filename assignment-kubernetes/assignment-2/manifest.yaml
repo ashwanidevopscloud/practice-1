@@ -6,8 +6,7 @@ spec:
   containers:
   - name: app-container
     image: busybox
-    command: ["sh", "-c", "echo $name; echo $project; echo $message; && sleep 10"] 
-    envFrom:  # Inject environment variables from ConfigMap and Secret
+    envFrom: 
     - configMapRef:
         name: app-config
     - secretRef:
