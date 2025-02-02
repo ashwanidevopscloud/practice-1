@@ -2,6 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-configure
+  labels:
+    name: kubernetes
+    project: app
 data:
-  name: kubernetes
+  name: infosys
   project: ANZ
