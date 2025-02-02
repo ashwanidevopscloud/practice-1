@@ -29,9 +29,9 @@ spec:
   selector:
     app: nginx        # Select pods with the label "app: nginx"
   ports:
-    - name: nginx-svc-port
-      protocol: TCP
-      port: 8080       # Port exposed externally
-      targetPort: 80   # Port the container is listening on
-      nodePort: 30001
-    type: NodePort
+  - name: nginx-svc-port
+    protocol: TCP
+    port: 8080       # Port exposed externally
+    targetPort: 80   # Port the container is listening on
+    nodePort: 30001
+  type: NodePort
