@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard # This name must match the storageClassName in the PV
+provisioner: kubernetes.io/no-provisioner # We are manually creating the PV, so no provisioner is needed
+reclaimPolicy: Retain # Keep the data even after the PVC is deleted
+volumeBindingMode: Immediate # Bind the PVC to the PV immediately

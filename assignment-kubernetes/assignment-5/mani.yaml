@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+spec:
+  capacity:
+    storage: 1Gi # Request 1 Gigabyte of storage
+  accessModes:
+    - ReadWriteOnce # Can be mounted by a single Pod in Read/Write mode
+  persistentVolumeReclaimPolicy: Retain # Keep the data even after the PVC is deleted
+  storageClassName: standard # Name of the StorageClass (we'll create this later)
+  hostPath: 
+    path: /data/my-pv # Path on the host node
+    type: DirectoryOrCreate # Create the directory if it doesn't exist
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard # Must match the StorageClass name
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: busybox
+    command: ["sh", "-c", "while true; do echo 'Data in persistent volume' >> /data/my-file.txt; sleep 5; done"] # Write data to the mounted volume
+    volumeMounts:
+    - name: my-volume
+      mountPath: /data
+  volumes:
+  - name: my-volume
+    persistentVolumeClaim:
+      claimName: my-pvc
