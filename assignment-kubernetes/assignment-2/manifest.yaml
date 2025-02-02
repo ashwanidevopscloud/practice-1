@@ -11,12 +11,4 @@ spec:
     - configMapRef:
         name: app-config
     - secretRef:
-        name: db-secrets
-    volumeMounts: # Mount the secret as a volume (alternative approach)
-    - name: db-volume
-      mountPath: /etc/db-credentials
-      readOnly: true
-  volumes: # Define the volume for mounting the secret
-  - name: db-volume
-    secret:
-      secretName: db-secrets
+        name: app-secret
