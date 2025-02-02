@@ -12,7 +12,7 @@ spec:
   template:             # Template for creating pods
     metadata:
       labels:
-        app: nginx      # Labels assigned to pods
+        - app: nginx      # Labels assigned to pods
     spec:
       containers:
       - name: nginx      # Name of the container
