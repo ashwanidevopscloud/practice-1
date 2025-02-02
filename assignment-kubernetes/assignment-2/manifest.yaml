@@ -5,8 +5,8 @@ metadata:
 spec:
   containers:
   - name: app-container
-    image: busybox  # Or any image you want to use
-    command: ["sh", "-c", "while true; do echo $APP_MESSAGE; echo $DB_USERNAME; echo $DB_PASSWORD; sleep 5; done"] # Example command
+    image: busybox
+    command: ["sh", "-c", "echo $name; echo$project; echo $app;"] 
     envFrom:  # Inject environment variables from ConfigMap and Secret
     - configMapRef:
         name: app-config
