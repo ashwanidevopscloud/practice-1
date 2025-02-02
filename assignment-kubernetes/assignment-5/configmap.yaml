@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  project: "ANZ"
+  message: "hello i am from infosys"
+  name: "app"
