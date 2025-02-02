@@ -1,12 +1,28 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: expense-efs-static
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-06450a748f6dae33b
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: efs-dynamic-claim
+  name: expense-efs-static-claim
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: efs-expense
+    - ReadWriteOnce
+  storageClassName: ""
+  volumeName: expense-efs-static
   resources:
     requests:
       storage: 5Gi
@@ -14,35 +30,34 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: efs-dynamic-pod
+  name: expense-efs-static-pod
   labels:
-    project: efs-dynamic
+    project: expense
+    module: static-efs
 spec:
   containers:
-    - name: nginx
-      image: nginx
-      envFrom: 
-        - configMapRef:
-            name: app-config
-      volumeMounts:
-        - name: efs-dynamic
-          mountPath: usr/share/nginx/html
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: expense-efs-static
+      mountPath: /usr/share/nginx/html
   volumes:
-    - name: efs-dynamic
-      persistentVolumeClaim:
-        claimName: efs-dynamic-claim
+  - name: expense-efs-static
+    persistentVolumeClaim:
+      claimName: expense-efs-static-claim
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: efs-dynmaic-service
+  name: efs-static-service
 spec:
-  type: LoadBalancer
   selector:
-    project: efs-dynamic
+    project: expense
+    module: static-efs
+  type: LoadBalancer
   ports:
     - name: node-port-svc
       protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 80 
       nodePort: 30003
